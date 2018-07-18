@@ -16,6 +16,7 @@ class Event < ApplicationRecord
   validates :capacity, numericality: { only_integer: true }
 
   validate :max_capacity
+  validate :time_sequentiality
 
   scope :before,     ->(time) { where("starts_at < ?", time) }
   scope :after,      ->(time) { where("starts_at > ?", time) }
@@ -47,6 +48,10 @@ class Event < ApplicationRecord
     if capacity && users.size > capacity
       errors.add(:users, "total can't be above capacity")
     end
+  end
+
+  def time_sequentiality
+    errors.add(:ends_at, "should not end before it starts") unless (starts_at && ends_at) && (starts_at < ends_at)
   end
 
   def notify_websocket_of_create
