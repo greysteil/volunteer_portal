@@ -70,9 +70,9 @@ GEM
       thor (~> 0.19.1)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    goldiloader (2.0.1)
-      activerecord (>= 4.2, < 5.2)
-      activesupport (>= 4.2, < 5.2)
+    goldiloader (2.1.1)
+      activerecord (>= 4.2, < 5.3)
+      activesupport (>= 4.2, < 5.3)
     graphiql-rails (1.4.2)
       rails
     graphql (1.7.8)
@@ -81,7 +81,7 @@ GEM
       promise.rb (~> 0.7.2)
     hashdiff (0.3.4)
     hashie (3.5.5)
-    i18n (1.0.1)
+    i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     jwt (1.5.6)
     loofah (2.2.2)
@@ -232,7 +232,7 @@ DEPENDENCIES
   ffaker
   flamegraph
   foreman
-  goldiloader (~> 2.0)
+  goldiloader (~> 2.1)
   graphiql-rails
   graphql (~> 1.6)
   graphql-batch
